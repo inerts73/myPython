@@ -9,7 +9,8 @@ results = []
 def add_basket_to_results(members, basket_len):
     if basket_len == 0:
         basket_copy = copy.deepcopy(basket)
-        results.append(basket_copy)
+        if basket_copy not in results:
+            results.append(basket_copy)
         return
 
     for i in range(len(members)):
